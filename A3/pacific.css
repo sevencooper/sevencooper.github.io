@@ -1,0 +1,141 @@
+header, hgroup, nav, footer, figure, figcaption, aside, section, article {
+	display: block;
+}
+body {
+	color: #666666;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+nav ul {
+	font-size: 1.2em;
+}
+nav a:visited {
+	color: #344873;
+}
+nav a:hover {
+	color: #FFFFFF;
+}
+h1 {
+	margin-bottom: 0;
+	padding: 10px;
+}
+h2 {
+	color: #3399CC;
+}
+h1,
+h2 {
+	font-family: Georgia, "Times New Roman", serif;
+}
+#contact {
+	font-size: 90%;
+}
+dt {
+	color: #000033;
+}
+footer {
+	font-family: Georgia, "Times New Roman", serif;
+}
+
+/* Everything added by me is below */
+
+#wrapper {
+	/* Set the width as described in the assignment */
+	width: 80%;
+	min-width: 600px;
+	/* Center the wrapper in the page */
+	margin: auto;
+	background-color: #8dc6e4;
+}
+
+nav {
+	/* Give the vertical nav bar a fixed with and float it to the left */
+	float: left;
+	width: 180px;
+}
+
+nav ul {
+	/* Remove the list markers */
+	list-style: none;
+	padding-left: 20px;
+}
+
+nav a {
+	/* Change nav link color */
+	color: #000134;
+	/* Increase the weight of the text */
+	font-weight: 700;
+	/* Remove link underlines */
+	text-decoration: none;
+}
+
+#content {
+	/* Add a margin-left to counteract the width of the nav bar so that content is aligned properly */
+	margin-left: 180px;
+	/* Background color and padding */
+	background-color: white;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+#content p {
+	/* Remove the top margin so that the content lines up with the top of the image */
+	margin-top: 0;
+}
+
+#content ul {
+	/* Change the list style to the required image */
+	list-style-image: url('marker.gif');
+	/* Position the list items on the inside so that they line up with the rest of the content text */
+	list-style-position: inside;
+}
+
+#content h2 {
+	/* Remove the margin so that the content occupies the entirety of the right side of the wrapper */
+	margin: 0;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#content img {
+	/* Float the image left and add margins so that the content's text is to the right of the image and not below it */
+	float: left;
+	margin-right: 30px;
+}
+
+.resort {
+	/* Set the color and weight for resort class */
+	color: #5c7a94;
+	font-weight: bold;
+}
+
+header {
+	/* Set the provided image as the header background */
+	background-image: url('sunset.jpg');
+	background-repeat: no-repeat;
+	background-position: right;
+	/* Color to fill in the space not filled by the image */
+	background-color: #000032;
+}
+
+h1 {
+	color: white;
+}
+
+footer {
+	/* Margin to account for the nav */
+	margin-left: 180px;
+	padding-left: 30px;
+	padding-bottom: 20px;
+	padding-top: 30px;
+	background-color: white;
+	/* Italicise and reduce text-size */
+	font-style: italic;
+	font-size: 0.8em;
+}
+
+body {
+	/* Set the background color */
+	background-color: #00569f;
+	/* Set the background image */
+	background-image: url('ptrbackground.jpg')
+}

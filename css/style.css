@@ -1,0 +1,80 @@
+/*
+    Berkay Balyemez
+    Berkay_Balyemez@student.uml.edu
+    UMass Lowell - GUI Programming I
+*/
+
+/* Remove margins on everything and set the font */
+*
+{
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Setup the top section to fill horizontally */
+.topsection
+{
+    margin: 0;
+    padding: 0;
+    
+    /* Set the width to 100% so that it covers all horizontal space */
+    width: 100%;
+    
+    background-color: black;
+}
+
+/* Used to style the text in the top section */
+.topsectiontext
+{
+    text-align: center;
+    color: white
+}
+
+/* A class used for text that should stand-out */
+.fancy {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 110%;
+}
+
+/* Setup the middle section to appear as a rectangle */
+.middlesection
+{
+    /* Set a margin on all sides so that the rectangle is not touching the edges of the page */
+    margin: 2em;
+    /* Create a solid black border to resemble a rectangle */
+    border: 2px solid black;
+}
+
+/* Add some spacing underneath section headers */
+.middlesection h1,.middlesection p {
+    margin-bottom: 10px;
+}
+
+/* Used so that the content inside of each section is not touching the edges of the rectangle */
+.sectioncontent
+{
+    margin: 10px;
+}
+
+/* Setup the bottom section so that it sits at the bottom of the page */
+.bottomsection
+{
+    margin: 0;
+    padding: 5px 0 0 0;
+
+    /* Set the width to 100% so that it covers all horizontal space */
+    width: 100%;
+    height: 25px;
+
+    /* Set the left and bottom coordinates to 0 so that it sits on the bottom left of the page */
+    left: 0;
+    bottom: 0;
+
+    /* Set the position to absolute so the above coordinates are utilized */
+    position: absolute;
+    
+    background-color: black;
+    color: white;
+    text-align: center;
+}
