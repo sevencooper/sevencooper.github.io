@@ -1,0 +1,17 @@
+/*
+    Berkay Balyemez
+    Berkay_Balyemez@student.uml.edu
+    UMass Lowell - GUI Programming I
+
+    Assignment 6 CSS file
+*/
+
+.invisible {
+    display: none;
+}
+
+.customTable {
+    /* Add spacing between each table cell */
+    border-collapse: separate;
+    border-spacing: 5px;
+}
