@@ -1,0 +1,84 @@
+<!--
+    Berkay Balyemez
+    Berkay_Balyemez@student.uml.edu
+    UMass Lowell - GUI Programming I
+
+    Assignment 7 HTML file
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Set the character encoding -->
+    <meta charset="utf-8">
+    <title>GUI1: Assignment 7</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- Nav -->
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Assignment 7</a>
+    </nav>
+
+    <!-- Usage instructions -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Multiplication Table Generator with JQuery Validation</h1>
+            <p>This website can be used to generated multiplication tables.</p>
+            <p>Enter values for the horizontal and vertical axis below and click the generate button to produce a table.
+            </p>
+        </div>
+    </div>
+
+    <!-- Input form -->
+    <div class="container">
+        <div>
+            <form id="input_form" class="form-horizontal" role="form">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="alert alert-danger col-md-12 invisible" id="error_message" role="alert">
+                            Please enter values between -50 and 50.
+                        </div>
+                        <div class="col-md-6">
+                            <label class="control-label col-md-6">Horizontal Axis Values</label>
+                            <input type="number" class="form-control margin-top" id="input_horz1" name="input_horz1">
+                            <input type="number" class="form-control margin-top" id="input_horz2" name="input_horz2">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="control-label col-md-6 ">Vertical Axis Values</label>
+                            <input type="number" class="form-control margin-top" id="input_vert1" name="input_vert1">
+                            <input type="number" class="form-control margin-top" id="input_vert2" name="input_vert2">
+                        </div>
+                    </div>
+                    <button type="button" id="button_generate" class="btn btn-primary btn-block margin-top">Generate
+                        Table</button>
+                </div>
+            </form>
+
+        </div>
+
+        <!-- Div in which table will be created -->
+        <div id="generated_table">
+        </div>
+    </div>
+
+    <!-- Javascript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
