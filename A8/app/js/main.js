@@ -6,7 +6,12 @@
     Assignment 8 Javascript file
 */
 
+var TAB_COUNTER = 0;
+
 $().ready(function () {
+    // Initialize at 0
+    $('.input_field').val(0);
+
     var horz1 = $('#input_horz1');
     var horz2 = $('#input_horz2');
     var vert1 = $('#input_vert1');
@@ -17,36 +22,24 @@ $().ready(function () {
     var vert1Slider = $('#vert1_slider');
     var vert2Slider = $('#vert2_slider');
 
-    function bindSliderAndInputField(id, value) {
-        if (id.includes("horz1")) {
-            horz1.val(value);
-            horz1Slider.slider('value', value);
-        } else if (id.includes("horz2")) {
-            horz2.val(value);
-            horz2Slider.slider('value', value);
-        } else if (id.includes("vert1")) {
-            vert1.val(value);
-            vert1Slider.slider('value', value);
-        } else if (id.includes("vert2")) {
-            vert2.val(value);
-            vert2Slider.slider('value', value);
-        }
-    }
+    // Initialize tabs
+    $('#tabs').tabs();
 
     $('.input_field').on('change', function (event) {
-        bindSliderAndInputField(event.target.id, $(event.target.id).val());
+        // Bind input fields to slider
+        bindSliderAndInputField(event.target.id, $('#' + event.target.id).val());
     });
 
     $('.input_slider').slider({
         min: -50,
         max: 50,
         change: function (event, ui) {
+            // Bind slider to input fields
             bindSliderAndInputField(event.target.id, ui.value);
         }
     });
 
     var button_generate = document.getElementById('button_generate');
-    var generated_table = document.getElementById('generated_table');
 
     // Custom validation method
     jQuery.validator.addMethod("validNumber", function (val, element) {
@@ -77,6 +70,89 @@ $().ready(function () {
     });
 
     button_generate.onclick = function () {
+        var horz1_val = horz1.val();
+        var horz2_val = horz2.val();
+        var vert1_val = vert1.val();
+        var vert2_val = vert2.val();
+
+        // Convert from String to Number (this may not be necessary)
+        var h1 = Number.parseInt(horz1_val);
+        var h2 = Number.parseInt(horz2_val);
+        var v1 = Number.parseInt(vert1_val);
+        var v2 = Number.parseInt(vert2_val);
+
+        if (h1 > h2) {
+            // Smaller number will be h1
+            var tmp = h2;
+            h2 = h1;
+            h1 = tmp;
+        }
+        if (v1 > v2) {
+            // Smaller number will be v1
+            var tmp = v2;
+            v2 = v1;
+            v1 = tmp;
+        }
+
+        var tabLabel = h1 + ' to ' + h2 + ' by ' + v1 + ' to ' + v2;
+        var tabId = 'tabs-' + TAB_COUNTER++;
+
+        // https://jqueryui.com/tabs/#manipulation for tab removal
+        $("#tabs ul").append('<li><a href="#' + tabId + '">' + tabLabel + '</a>' + "<span class='ui-icon ui-icon-close' role='presentation'>Remove Tab</span>" + '</li>');
+        $("#tabs ul").after('<div id="' + tabId + '"></div>');
+
+        regenerateTable(tabId);
+
+        $("#tabs").tabs("refresh");
+    };
+
+    // https://jqueryui.com/tabs/#manipulation
+    $("#tabs").on("click", "span.ui-icon-close", function () {
+        var panelId = $(this).closest("li").remove().attr("aria-controls");
+        $("#" + panelId).remove();
+        $("#tabs").tabs("refresh");
+    });
+
+    // Removes list items and divs relating to tabs
+    $("#button_cleartabs").click(function () {
+        $("#tabs div").remove();
+        $("#tabs ul li").remove();
+        $("#tabs").tabs("refresh");
+    });
+
+    // Binds slider and input field values and generates the table
+    function bindSliderAndInputField(id, value) {
+        if (id.includes("horz1")) {
+            if (id.includes("slider")) {
+                horz1.val(value);
+            } else {
+                horz1Slider.slider('value', value);
+            }
+        } else if (id.includes("horz2")) {
+            if (id.includes("slider")) {
+                horz2.val(value);
+            } else {
+                horz2Slider.slider('value', value);
+            }
+        } else if (id.includes("vert1")) {
+            if (id.includes("slider")) {
+                vert1.val(value);
+            } else {
+                vert1Slider.slider('value', value);
+            }
+        } else if (id.includes("vert2")) {
+            if (id.includes("slider")) {
+                vert2.val(value);
+            } else {
+                vert2Slider.slider('value', value);
+            }
+        }
+
+        regenerateTable('generated_table');
+    }
+
+    // Creates a table inside of the provided div
+    function regenerateTable(divId) {
         if (!$("#input_form").valid()) {
             // Move the focus to the invalid input fields
             validator.focusInvalid();
@@ -107,8 +183,8 @@ $().ready(function () {
             v1 = tmp;
         }
 
-        generateTable(h1, h2, v1, v2);
-    };
+        generateTable(divId, h1, h2, v1, v2);
+    }
 
     function isValidNumber(value) {
         // True if number between -50 and 50
@@ -119,9 +195,9 @@ $().ready(function () {
         return true;
     }
 
-    function generateTable(h1, h2, v1, v2) {
+    function generateTable(divId, h1, h2, v1, v2) {
         // Clear old table
-        generated_table.innerHTML = '';
+        document.getElementById(divId).innerHTML = '';
 
         var mTable = document.createElement('table');
         mTable.className += 'table customTable';
@@ -159,6 +235,6 @@ $().ready(function () {
                 }
             }
         }
-        generated_table.appendChild(mTable);
+        document.getElementById(divId).appendChild(mTable);
     }
 });

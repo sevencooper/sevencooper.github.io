@@ -14,10 +14,10 @@
     <meta charset="utf-8">
     <title>GUI1: Assignment 8</title>
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/jquery-ui.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="jquery-ui.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -31,58 +31,82 @@
         <div class="container">
             <h1>Multiplication Table Generator with JQuery Validation and JQueryUI</h1>
             <p>This website can be used to generated multiplication tables.</p>
-            <p>Enter values for the horizontal and vertical axis below and click the generate button to produce a table.
+            <p>Enter values for the horizontal and vertical axis below to produce a table. You may save a table by
+                clicking the button.
             </p>
         </div>
     </div>
 
     <!-- Input form -->
-    <div class="container">
+    <div class="container-fluid">
         <div>
             <form id="input_form" class="form-horizontal" role="form">
                 <div class="form-group">
                     <div class="row">
-                        <div class="alert alert-danger col-md-12 invisible" id="error_message" role="alert">
-                            Please enter values between -50 and 50.
-                        </div>
-                        <div class="col-md-6">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-3">
                             <label class="control-label col-md-6">Horizontal Axis Values</label>
-                            <input type="number" class="form-control margin-top input_field" id="input_horz1" name="input_horz1">
+                            <input type="number" class="form-control margin-top input_field" id="input_horz1"
+                                name="input_horz1">
                             <div class="input_slider" id="horz1_slider"></div>
-                            <input type="number" class="form-control margin-top input_field" id="input_horz2" name="input_horz2">
+                            <input type="number" class="form-control margin-top input_field" id="input_horz2"
+                                name="input_horz2">
                             <div class="input_slider" id="horz2_slider"></div>
-                        </div>
-                        <div class="col-md-6">
+
                             <label class="control-label col-md-6 ">Vertical Axis Values</label>
-                            <input type="number" class="form-control margin-top input_field" id="input_vert1" name="input_vert1">
+                            <input type="number" class="form-control margin-top input_field" id="input_vert1"
+                                name="input_vert1">
                             <div class="input_slider" id="vert1_slider"></div>
-                            <input type="number" class="form-control margin-top input_field" id="input_vert2" name="input_vert2">
+                            <input type="number" class="form-control margin-top input_field" id="input_vert2"
+                                name="input_vert2">
                             <div class="input_slider" id="vert2_slider"></div>
+                            <button type="button" id="button_generate" class="btn btn-primary btn-block margin-top">Save
+                                Table</button>
                         </div>
+                        <div class="col-md-7">
+                            <!-- Div in which table will be created -->
+                            <div id="generated_table">
+                            </div>
+                        </div>
+                        <div class="col-md-1"></div>
                     </div>
-                    <button type="button" id="button_generate" class="btn btn-primary btn-block margin-top">Generate
-                        Table</button>
                 </div>
             </form>
-
         </div>
-
-        <!-- Div in which table will be created -->
-        <div id="generated_table">
+        <!-- Jumbotron separating saved tables and table generator -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron">
+                    <div class="container text-center">
+                        <h1>Saved Tables are Below</h1>
+                        <button type="button" id="button_cleartabs" class="btn btn-primary btn-block margin-top">Clear
+                            Tabs</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Saved tables -->
+        <div class="row">
+            <div class="col-md-12">
+                <div id="tabs">
+                    <ul>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- Javascript -->
-    <script src="js/jquery.js"></script>
+    <script src="external/jquery/jquery.js"></script>
+    <script src="jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
-    <script src="js/jquery-ui.js"></script>
-    <script src="js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
