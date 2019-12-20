@@ -1,0 +1,93 @@
+<!--
+    Berkay Balyemez
+    Berkay_Balyemez@student.uml.edu
+    UMass Lowell - GUI Programming I
+
+    Assignment 8 HTML file
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Set the character encoding -->
+    <meta charset="utf-8">
+    <title>GUI1: Assignment 9</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="jquery-ui.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Tiles -->
+    <div id="tiles">
+    </div>
+
+    <!-- Nav -->
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Assignment 9</a>
+    </nav>
+
+    <!-- Introduction -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Scrabble</h1>
+            <p>Drag letters from the tile holder to the scrabble board and click the submit button to gain points!</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Score -->
+        <div class="row mb-5">
+            <h1 class="mx-auto">Score: 0</h1>
+        </div>
+
+        <!-- Scrabble Board -->
+        <div class="row mb-5">
+            <img class="snaptarget default" src="images/board_default.png" alt="Scrabble Board">
+            <img class="snaptarget default" src="images/board_default.png" alt="Scrabble Board">
+            <img class="snaptarget double-word" src="images/board_double_word.png" alt="Scrabble Board">
+            <img class="snaptarget default" src="images/board_default.png" alt="Scrabble Board">
+            <img class="snaptarget default" src="images/board_default.png" alt="Scrabble Board">
+            <img class="snaptarget default" src="images/board_default.png" alt="Scrabble Board">
+            <img class="snaptarget double-letter" src="images/board_double_letter.png" alt="Scrabble Board">
+            <img class="snaptarget default" src="images/board_default.png" alt="Scrabble Board">
+            <img class="snaptarget double-letter" src="images/board_double_letter.png" alt="Scrabble Board">
+            <img class="snaptarget default" src="images/board_default.png" alt="Scrabble Board">
+            <img class="snaptarget default" src="images/board_default.png" alt="Scrabble Board">
+            <img class="snaptarget default" src="images/board_default.png" alt="Scrabble Board">
+            <img class="snaptarget double-letter" src="images/board_double_letter.png" alt="Scrabble Board">
+            <img class="snaptarget default" src="images/board_default.png" alt="Scrabble Board">
+            <img class="snaptarget default" src="images/board_default.png" alt="Scrabble Board">
+        </div>
+
+        <!-- Tile Holder -->
+        <div class="row mb-5">
+            <img id="tile-holder" class="mx-auto d-block holder-img" src="images/holder.png" alt="Tile Holder">
+        </div>
+
+        <!-- Buttons -->
+        <div class="row">
+            <div class="col-md-12">
+                <button type="button" id="button-submit" class="btn btn-primary btn-block margin-top">New
+                    Letters</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Javascript -->
+    <script src="external/jquery/jquery.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+/*
+    Berkay Balyemez
+    Berkay_Balyemez@student.uml.edu
+    UMass Lowell - GUI Programming I
+
+    Assignment 9 CSS file
+*/
+
+body {
+    background-color: #C19A57;
+    color: #C6C6C6;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.jumbotron {
+    background-color: #32566C;
+}
+
+.btn-primary {
+    background-color: #32566C;
+    border-color: #32566C;
+}
+
+.tile-img {
+    /* Original dimensions: 165 x 180 -> Scale down 40% */
+    width: 72px;
+    height: 80px;
+}
+
+.holder-img {
+    /* Original dimensions: 165 x 180 -> Scale down 40% */
+    width: 1150px;
+    height: 80px;
+}
+
+.zero-pos {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+.snaptarget {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#tiles {
+    height: 0px;
+}
