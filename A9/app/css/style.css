@@ -28,7 +28,6 @@ body {
 }
 
 .holder-img {
-    /* Original dimensions: 165 x 180 -> Scale down 40% */
     width: 1150px;
     height: 80px;
 }
