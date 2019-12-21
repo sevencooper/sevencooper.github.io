@@ -99,7 +99,7 @@ function onTileStopped(event, ui) {
     var collisionClass = checkForCollision(position);
 
     if (collisionClass === "default") {
-        if (collidedTiles.has(event.target.id)) {
+        if (collidedTiles.has(event.target.id)) {*
             // score -= ...
         } else {
             collidedTiles.set(event.target.id, collisionClass);
